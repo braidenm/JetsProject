@@ -5,5 +5,7 @@
 This project simulates and airfield:
 
 #### Topic and Technologies
-* Ojects-Oriented programming
+* Object-Oriented programming
 * Arrays
+* Inheritance
+* Polymorphism
