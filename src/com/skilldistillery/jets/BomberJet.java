@@ -8,7 +8,7 @@ public class BomberJet extends FightingJet implements CanBomb {
 	private final String bombEmoji = new String(Character.toChars(0x1F4A3));
 	
 
-	public BomberJet(String model, int speedInMPH, int rangeInMiles, int price, int MAX_BOMBS) {
+	public BomberJet(String model, double speedInMPH, double rangeInMiles, int price, int MAX_BOMBS) {
 		super(model, speedInMPH, rangeInMiles, price);
 		this.MAX_BOMBS = MAX_BOMBS;
 		this.numBombs = MAX_BOMBS;
@@ -55,8 +55,8 @@ public class BomberJet extends FightingJet implements CanBomb {
 
 	@Override
 	public String toString() {
-		return "BomberJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= " + 
-				+ super.getPrice() + ", MAX_BOMBS= " + MAX_BOMBS + "]";
+		return "" + super.getPilot()+ "\nBomberJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= $" + 
+				+ super.getPrice() + ", MAX_BOMBS= " + MAX_BOMBS + "]\n";
 	}
 
 	public int getMAX_BOMBS() {

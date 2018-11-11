@@ -8,7 +8,7 @@ public class CargoJet extends Jet implements CanCarryStuff {
 	
 	
 
-	public CargoJet(String model, int speedInMPH, int rangeInMiles, int price, int MAX_LOAD) {
+	public CargoJet(String model, double speedInMPH, double rangeInMiles, int price, int MAX_LOAD) {
 		super(model, speedInMPH, rangeInMiles, price);
 		this.MAX_LOAD = MAX_LOAD;
 	}
@@ -35,8 +35,8 @@ public class CargoJet extends Jet implements CanCarryStuff {
 
 	@Override
 	public String toString() {
-		return "CargoJet model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= "
-				+ super.getRangeInMiles() + ", price= " + super.getPrice() + ", MAX_LOAD= " + MAX_LOAD + "]" ;
+		return "" + super.getPilot() + "\nCargoJet model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= "
+				+ super.getRangeInMiles() + ", price= $" + super.getPrice() + ", MAX_LOAD= " + MAX_LOAD + "]\n" ;
 	}
 	
 	

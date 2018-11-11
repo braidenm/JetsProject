@@ -14,5 +14,15 @@ class JetTester {
 		
 		assertEquals(2.444, Math.round((speedInMPH / 767.269)*1000.0)/1000.0 );
 	}
+	
+	@Test
+	void test_if_get_time_flying_gives_expected_result_when_range_is_less_than_speed() {
+		double timeFlying, rangeInMiles, speedInMPH;
+		rangeInMiles=500.0;
+		speedInMPH = 1500.0;
+		
+			timeFlying = Math.round((rangeInMiles / speedInMPH) * 100.0) / 100.0;
+		assertEquals(0.33, timeFlying);
+	}
 
 }

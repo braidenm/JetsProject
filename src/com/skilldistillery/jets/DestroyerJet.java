@@ -7,7 +7,7 @@ public class DestroyerJet extends FightingJet implements CanShootMissiles, CanSh
 	private final String explosionsEmoji = new String(Character.toChars(0x1F4A5));
 	private final String missileEmoji = new String(Character.toChars(0x1F680));
 
-	public DestroyerJet(String model, int speedInMPH, int rangeInMiles, int price, int MAX_BULLETS, int MAX_MISSILES) {
+	public DestroyerJet(String model, double speedInMPH, double rangeInMiles, int price, int MAX_BULLETS, int MAX_MISSILES) {
 		super(model, speedInMPH, rangeInMiles, price);
 		this.MAX_BULLETS = MAX_BULLETS;
 		this.numBullets = MAX_BULLETS;
@@ -56,8 +56,8 @@ public class DestroyerJet extends FightingJet implements CanShootMissiles, CanSh
 
 	@Override
 	public String toString() {
-		return "DestroyerJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= "
-				+ super.getPrice() + ", MAX_BULLETS= " + MAX_BULLETS + ", MAX_MISSILES= " + MAX_MISSILES + "]" ;
+		return "" + super.getPilot()+ "\nDestroyerJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= $"
+				+ super.getPrice() + ", MAX_BULLETS= " + MAX_BULLETS + ", MAX_MISSILES= " + MAX_MISSILES + "]\n" ;
 	}
 	@Override
 	public void kamakazie() {

@@ -2,6 +2,7 @@ package com.skilldistillery.jets;
 
 public class AirField {
 	private Jet[] jets = new Jet[20];
+//	private Pilot[] pilots = new Pilot[20];
 
 	public Jet[] getJetsArray() {
 		Jet[] jetsCopy = new Jet[20];
@@ -12,25 +13,47 @@ public class AirField {
 		}
 		return jetsCopy;
 	}
+//	public Pilot[] getPilotsArray() {
+//		int counter = 0;
+//		for (Pilot i : pilots) {
+//			pilots[counter] = i;
+//			counter++;
+//		}
+//		return pilots;
+//	}
+	public void changePilotsArray(Pilot pilot, int index) {
+		jets[index].setPilot(pilot);
+		
+	}
 
 	private int j = 0;
 	public void addJet(Jet jet) {
 		jets[j] = jet;
 		this.j++;
 	}
+	private int p = 0;
+	public void addPilot(Pilot pilot) {
+		jets[p].setPilot(pilot);
+		this.p++;
+	}
 
 	private int n = 1;
 	public void displayAllJets() {
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
-				System.out.print("Jet " + this.n + ") ");
+				System.out.print("Jet and its Pilot " + this.n + ") ");
 				System.out.println(jets[i]);
+//				System.out.println(pilots[i]);
 				this.n++;
 			}
 
 		}
 		System.out.println();
 		n=1;
+	}
+	
+	public Jet getOnePilot(int index) {
+		return jets[index];
 	}
 
 	public void fastestJet() {
@@ -174,8 +197,9 @@ public class AirField {
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
 				if (jets[i] instanceof FightingJet) {
-					System.out.println("Jet " + i + ") " + jets[i].toString());
-					jets.toString();
+					System.out.println("Jet and its Pilot " + i + ") " + jets[i].toString());
+//					System.out.println(pilots[i]);
+	
 					System.out.println();
 
 				}
@@ -197,14 +221,23 @@ public class AirField {
 	}
 
 	public void flyAllJets() {
-		for (Jet jet : jets) {
-			if (jet != null) {
-
-				jet.fly();
+		for (int i = 0; i < jets.length; i++){
+			if (jets[i] != null) {
+//				System.out.println(pilots[i] + " is flying");
+				jets[i].fly();
 				System.out.println();
 
 			}
 		}
 	}
+	public void flyOneJets(int choice) {
+			if (jets[choice] != null) {
+//				System.out.println(pilots[choice] + " is flying");
+				jets[choice].fly();
+				System.out.println();
+				
+			}
+		}
+	
 
 }

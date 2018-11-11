@@ -3,9 +3,10 @@ package com.skilldistillery.jets;
 public abstract class FightingJet extends Jet {
 
 	private String explosionsEmoji = new String(Character.toChars(0x1F4A5));
+	private Pilot pilot;
 	
 
-	public FightingJet(String model, int speedInMPH, int rangeInMiles, int price) {
+	public FightingJet(String model, double speedInMPH, double rangeInMiles, int price) {
 		super(model, speedInMPH, rangeInMiles, price);
 		// TODO Auto-generated constructor stub
 	}
@@ -27,6 +28,15 @@ public abstract class FightingJet extends Jet {
 	abstract void fireAllWeapons();
 	
 	abstract void reloadAllWeapons();
+	
+	public Pilot getPilot() {
+		return pilot;
+	}
+
+
+	public void setPilot(Pilot pilot) {
+		this.pilot = pilot;
+	}
 	
 	
 

@@ -18,14 +18,20 @@ public class JestApplication {
 			af.addJet(new DogFightJet("DogFightJet2", 2000, 2000, 35_000_000, 6500));
 			af.addJet(new DestroyerJet("DestroyerJet1", 2500, 1500, 50_000_000, 10_000, 6));
 			af.addJet(new DestroyerJet("DestroyerJet2", 2700, 1600, 60_000_000, 10_000, 4));
-			af.addJet(new DestroyerJet("DestroyerJet3", 2750, 2000, 65_000_000, 8000, 4));
 			af.addJet(new BomberJet("bomberJet1", 1500, 5000, 45_000_000, 400));
 			af.addJet(new BomberJet("bomberJet2", 1200, 9000, 60_000_000, 500));
-			af.addJet(new BomberJet("bomberJet3", 900, 11_000, 50_000_000, 1000));
-			af.addJet(new BomberJet("bomberJet4", 1000, 10_000, 55_000_000, 900));
 			af.addJet(new CargoJet("CargoJet1", 900, 10_000, 40_000_000, 5000));
 			af.addJet(new CargoJet("CargoJet2", 800, 12_000, 38_000_000, 7000));
-			af.addJet(new CargoJet("CargoJet3", 1000, 9_000, 45_000_000, 5500));
+			
+			af.addPilot(new Pilot("Bob", "Male", 25, 100_000));
+			af.addPilot(new Pilot("Sally", "Female", 15, 85_000));
+			af.addPilot(new Pilot("Dave", "Male", 5, 60_000));
+			af.addPilot(new Pilot("Steve", "Male", 6, 65_000));
+			af.addPilot(new Pilot("Deb", "Female", 25, 100_000));
+			af.addPilot(new Pilot("Chris", "Male", 8, 70_000));
+			af.addPilot(new Pilot("Jack", "Male", 16, 86_000));
+			af.addPilot(new Pilot("Karen", "Female", 30, 120_000));
+			af.addPilot(new Pilot("Jackie", "Female", 14, 80_000));
 		
 	
 		tempJetArr = af.getJetsArray();
@@ -143,12 +149,40 @@ public class JestApplication {
 				af.addJet(customJet);
 				break;
 			}
+			case (8):{
+				System.out.println("Pick a jet: ");
+				af.displayAllJets();
+				choice = sc.nextInt();
+				af.flyOneJets(choice - 1);
+				break;
+					
+			}
+			case(9):{
+				System.out.println("Which Jet do you want to change pilots: ");
+				af.displayAllJets();
+				choice = sc.nextInt();
+				System.out.print("Lets get a new Pilot, What is there name? (First Name Only): ");
+				String name = sc.next();
+				System.out.print("Gender? (Male/Female): ");
+				String gender = sc.next();
+				System.out.print("Years flying: ");
+				int yearsFlying = sc.nextInt();
+				System.out.print("Salary (no spaces or commas): ");
+				int salary = sc.nextInt();
+				
+				Pilot customPilot = new Pilot(name, gender, yearsFlying, salary);
+				af.changePilotsArray(customPilot, choice - 1);
+				
+				System.out.println("Here is your new Pilot with their Jet: ");
+				System.out.println(af.getOnePilot(choice -1));
+				
+			}
 			default:
 				break;
 
 			}
 
-		} while (choice != 8);
+		} while (choice != 10);
 		
 		System.out.println("GoodBye");
 		sc.close();
@@ -163,8 +197,10 @@ public class JestApplication {
 				+ "4) View Jet with Longest Range\n" 
 				+ "5) Load All Cargo Jets\n"
 				+ "6) FIGHT!!\n"
-				+ "7) Add A Jet To The Fleet\n" 
-				+ "8) Quit");
+				+ "7) Add A Jet To The Fleet\n"
+				+ "8) Fly an Individual Jet\n"
+				+ "9) Hire a New Pilot for a Jet\n"
+				+ "10) Quit");
 
 		System.out.println(menu);
 	}

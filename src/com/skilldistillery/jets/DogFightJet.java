@@ -7,7 +7,7 @@ public class DogFightJet extends FightingJet implements CanShoot {
 	private final String explosionsEmoji = new String(Character.toChars(0x1F4A5));
 
 
-	public DogFightJet(String model, int speedInMPH, int rangeInMiles, int price, int MAX_BULLETS) {
+	public DogFightJet(String model, double speedInMPH, double rangeInMiles, int price, int MAX_BULLETS) {
 		super(model, speedInMPH, rangeInMiles, price);
 		this.MAX_BULLETS = MAX_BULLETS;
 		this.numBullets = MAX_BULLETS;
@@ -65,8 +65,8 @@ public class DogFightJet extends FightingJet implements CanShoot {
 
 	@Override
 	public String toString() {
-		return "DogFightJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= " +  
-				+ super.getPrice() + ", MAX_BULLETS= " + MAX_BULLETS + "]";
+		return "" + super.getPilot()+ "\nDogFightJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= $" +  
+				+ super.getPrice() + ", MAX_BULLETS= " + MAX_BULLETS + "]\n";
 	}
 	
 
