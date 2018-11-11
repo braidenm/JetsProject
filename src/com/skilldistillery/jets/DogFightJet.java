@@ -65,7 +65,8 @@ public class DogFightJet extends FightingJet implements CanShoot {
 
 	@Override
 	public String toString() {
-		return "" + super.getPilot()+ "\nDogFightJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= $" +  
+		return "" + super.getPilot()+ "\nDogFightJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= "
+				+ super.getRangeInMiles() + ", price= $" +  
 				+ super.getPrice() + ", MAX_BULLETS= " + MAX_BULLETS + "]\n";
 	}
 	

@@ -55,7 +55,8 @@ public class BomberJet extends FightingJet implements CanBomb {
 
 	@Override
 	public String toString() {
-		return "" + super.getPilot()+ "\nBomberJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= " + super.getRangeInMiles() + ", price= $" + 
+		return "" + super.getPilot()+ "\nBomberJet [model= "+ super.getModel() + ", speedInMPH= " + super.getSpeedInMPH()+ ", rangeInMiles= "
+				+ super.getRangeInMiles() + ", price= $" + 
 				+ super.getPrice() + ", MAX_BOMBS= " + MAX_BOMBS + "]\n";
 	}
 

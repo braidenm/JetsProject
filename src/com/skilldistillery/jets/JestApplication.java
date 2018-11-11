@@ -132,20 +132,27 @@ public class JestApplication {
 			case(7):{
 				System.out.println("We are Going to add Your Jet to the FLeet.\n"
 						+ "(You can only add Basic Jets until you buy the Premium Version)");
-				System.out.println("Model Name: ");
+				
+				System.out.print("Model Name: ");
 				String model = sc.next();
-				System.out.println("How Fast can it go in MPH: ");
+				
+				System.out.print("How Fast can it go in MPH: ");
 				int speedInMPH = sc.nextInt();
-				System.out.println("What is the Range in Miles: ");
+				
+				System.out.print("What is the Range in Miles: ");
 				int rangeInMiles = sc.nextInt();
-				System.out.println("How much does it cost: ");
+				
+				System.out.print("How much does it cost: ");
 				int price = sc.nextInt();
+				
 				JetImpl customJet = new JetImpl(model, speedInMPH, rangeInMiles, price);
 				System.out.println();
+				
 				System.out.println("Here is your Jet: ");
-				System.out.println(customJet.toString());
+				System.out.println(customJet);
 				System.out.println();
-				System.out.println("Added to the inventory, go to view fleet to see your jet and make it fly");
+				
+				System.out.println("Added to the inventory, You should hire a pilot, then go to view fleet to see your jet and make it fly");
 				af.addJet(customJet);
 				break;
 			}
@@ -175,6 +182,8 @@ public class JestApplication {
 				
 				System.out.println("Here is your new Pilot with their Jet: ");
 				System.out.println(af.getOnePilot(choice -1));
+				
+				break;
 				
 			}
 			default:

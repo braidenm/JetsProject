@@ -13,6 +13,7 @@ public class AirField {
 		}
 		return jetsCopy;
 	}
+	//dont know why I made this, was not needed
 //	public Pilot[] getPilotsArray() {
 //		int counter = 0;
 //		for (Pilot i : pilots) {
@@ -27,6 +28,7 @@ public class AirField {
 	}
 
 	private int j = 0;
+	
 	public void addJet(Jet jet) {
 		jets[j] = jet;
 		this.j++;
@@ -36,6 +38,17 @@ public class AirField {
 		jets[p].setPilot(pilot);
 		this.p++;
 	}
+//	public void addRandomPilot(Pilot pilot) {
+//		for (Jet jet : jets) {
+//			if (jet != null) {
+//				jets[p].setPilot(pilot);
+//				this.p++;
+//				
+//			}
+//			
+//		}
+//		
+//	}
 
 	private int n = 1;
 	public void displayAllJets() {
@@ -198,7 +211,6 @@ public class AirField {
 			if (jets[i] != null) {
 				if (jets[i] instanceof FightingJet) {
 					System.out.println("Jet and its Pilot " + i + ") " + jets[i].toString());
-//					System.out.println(pilots[i]);
 	
 					System.out.println();
 
@@ -223,7 +235,6 @@ public class AirField {
 	public void flyAllJets() {
 		for (int i = 0; i < jets.length; i++){
 			if (jets[i] != null) {
-//				System.out.println(pilots[i] + " is flying");
 				jets[i].fly();
 				System.out.println();
 
@@ -232,7 +243,6 @@ public class AirField {
 	}
 	public void flyOneJets(int choice) {
 			if (jets[choice] != null) {
-//				System.out.println(pilots[choice] + " is flying");
 				jets[choice].fly();
 				System.out.println();
 				
