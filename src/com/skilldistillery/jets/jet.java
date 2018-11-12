@@ -27,10 +27,10 @@ public abstract class Jet {
 	public void fly() {
 		String planeEmoji = new String(Character.toChars(0x2708));
 		StringBuilder flyingInfo = new StringBuilder("Speed in MPH: " + speedInMPH + "\nIn MAchs: " +this.getSpeedInMach()+ 
-				"\niDistance: " + rangeInMiles +
-				"\nI can fly for " + this.getTimeFlying()+ " hours.");
+				"\nDistance: " + rangeInMiles +
+				"\nTime in the Air: " + this.getTimeFlying()+ " hours.");
 		
-		System.out.println(this.getPilot() + "is flying the "+model + planeEmoji);
+		System.out.println(this.getPilot() + " is flying the "+model + planeEmoji);
 		System.out.println(flyingInfo);
 		System.out.println();
 		

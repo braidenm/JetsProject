@@ -17,7 +17,7 @@ public class DestroyerJet extends FightingJet implements CanShootMissiles, CanSh
 	
 	@Override
 	public void shooting() {
-		System.out.println(super.getModel() + " Pew pew");
+		System.out.println(super.getModel() + " Pew pew" + explosionsEmoji);
 		System.out.println("out of bullets now, reload");
 		this.numBullets = 0;
 	}
@@ -33,7 +33,7 @@ public class DestroyerJet extends FightingJet implements CanShootMissiles, CanSh
 	
 	@Override
 	public void attack(FightingJet enemy) {
-		System.out.println(super.getModel() + "just fired all bullets and missiles at " + enemy.getModel());
+		System.out.println(super.getModel() + "just fired all bullets" +explosionsEmoji + " and missiles" + missileEmoji +" at " + enemy.getModel());
 		this.numBullets = 0;
 		this.numMissiles = 0;
 	}
@@ -49,7 +49,7 @@ public class DestroyerJet extends FightingJet implements CanShootMissiles, CanSh
 
 	@Override
 	public void reloadAllWeapons() {
-		System.out.println(super.getModel() + "Fully reloaded");
+		System.out.println(super.getModel() + "Fully reloaded" + missileEmoji);
 		this.numBullets = MAX_BULLETS;
 		this.numMissiles = MAX_MISSILES;
 	}

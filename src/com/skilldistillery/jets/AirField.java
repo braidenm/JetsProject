@@ -2,7 +2,6 @@ package com.skilldistillery.jets;
 
 public class AirField {
 	private Jet[] jets = new Jet[20];
-//	private Pilot[] pilots = new Pilot[20];
 
 	public Jet[] getJetsArray() {
 		Jet[] jetsCopy = new Jet[20];
@@ -13,58 +12,40 @@ public class AirField {
 		}
 		return jetsCopy;
 	}
-	//dont know why I made this, was not needed
-//	public Pilot[] getPilotsArray() {
-//		int counter = 0;
-//		for (Pilot i : pilots) {
-//			pilots[counter] = i;
-//			counter++;
-//		}
-//		return pilots;
-//	}
+
 	public void changePilotsArray(Pilot pilot, int index) {
 		jets[index].setPilot(pilot);
-		
+
 	}
 
 	private int j = 0;
-	
+
 	public void addJet(Jet jet) {
 		jets[j] = jet;
 		this.j++;
 	}
+
 	private int p = 0;
+
 	public void addPilot(Pilot pilot) {
 		jets[p].setPilot(pilot);
 		this.p++;
 	}
-//	public void addRandomPilot(Pilot pilot) {
-//		for (Jet jet : jets) {
-//			if (jet != null) {
-//				jets[p].setPilot(pilot);
-//				this.p++;
-//				
-//			}
-//			
-//		}
-//		
-//	}
 
 	private int n = 1;
+
 	public void displayAllJets() {
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
-				System.out.print("Jet and its Pilot " + this.n + ") ");
+				System.out.print("Jet and its Pilot " + this.n + ") \n");
 				System.out.println(jets[i]);
-//				System.out.println(pilots[i]);
 				this.n++;
 			}
-
 		}
 		System.out.println();
-		n=1;
+		n = 1;
 	}
-	
+
 	public Jet getOnePilot(int index) {
 		return jets[index];
 	}
@@ -96,18 +77,15 @@ public class AirField {
 	public void allFightingJetsFire() {
 		for (Jet jet : jets) {
 			if (jet != null) {
-				if (jet instanceof CanShootMissiles && ((CanShootMissiles)jet).getNumMissiles() == 0) {
-					System.out.println("You don't have any missiles, Reload");
-				}
-				else if (jet instanceof CanShoot && ((CanShoot) jet).getNumBullets() == 0) {
-					System.out.println("You don't have any bullets, Reload");
-				
-				}
-				else if (jet instanceof CanBomb && ((CanBomb) jet).getNumBombs() == 0) {
-					System.out.println("You don't have any Bombs, Reload");
-				
-				}
-				else if (jet instanceof FightingJet) {
+				if (jet instanceof CanShootMissiles && ((CanShootMissiles) jet).getNumMissiles() == 0) {
+					System.out.println(jet.getModel() + "\nOut of missiles, Reload\n");
+				} else if (jet instanceof CanShoot && ((CanShoot) jet).getNumBullets() == 0) {
+					System.out.println(jet.getModel() + "\nOut of bullets, Reload\n");
+
+				} else if (jet instanceof CanBomb && ((CanBomb) jet).getNumBombs() == 0) {
+					System.out.println(jet.getModel() + "\nOut of Bombs, Reload\n");
+
+				} else if (jet instanceof FightingJet) {
 					((FightingJet) jet).fireAllWeapons();
 					System.out.println();
 
@@ -143,16 +121,17 @@ public class AirField {
 
 		}
 	}
+
 	public void allFightingJetsKamakazie() {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof FightingJet) {
 					((FightingJet) jet).kamakazie();
 					System.out.println();
-					
+
 				}
 			}
-			
+
 		}
 	}
 
@@ -160,9 +139,8 @@ public class AirField {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof CanShoot && ((CanShoot) jet).getNumBullets() == 0) {
-					System.out.println("You don't have any bullets, Reload");
-				}
-				else if (jet instanceof CanShoot) {
+					System.out.println(jet.getModel() + "Out of Bullets bullets, Reload\n");
+				} else if (jet instanceof CanShoot) {
 					((CanShoot) jet).shooting();
 					System.out.println();
 
@@ -176,10 +154,9 @@ public class AirField {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof CanShootMissiles && ((CanShootMissiles) jet).getNumMissiles() == 0) {
-					System.out.println("You don't have any Missiles, Reload");
-				
-				}
-				else if (jet instanceof CanShootMissiles) {
+					System.out.println(jet.getModel() + "\nOut of Missiles, Reload\n");
+
+				} else if (jet instanceof CanShootMissiles) {
 					((CanShootMissiles) jet).fireMissiles();
 					System.out.println();
 
@@ -193,10 +170,9 @@ public class AirField {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof CanBomb && ((CanBomb) jet).getNumBombs() == 0) {
-					System.out.println("You don't have any Bombs, Reload");
-				
-				}
-				else if (jet instanceof CanBomb) {
+					System.out.println(jet.getModel() + "Out of Bombs, Reload\n");
+
+				} else if (jet instanceof CanBomb) {
 					((CanBomb) jet).bomb();
 					System.out.println();
 
@@ -210,8 +186,8 @@ public class AirField {
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
 				if (jets[i] instanceof FightingJet) {
-					System.out.println("Jet and its Pilot " + i + ") " + jets[i].toString());
-	
+					System.out.println("Jet and its Pilot " + i + ") \n" + jets[i]);
+
 					System.out.println();
 
 				}
@@ -233,7 +209,7 @@ public class AirField {
 	}
 
 	public void flyAllJets() {
-		for (int i = 0; i < jets.length; i++){
+		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
 				jets[i].fly();
 				System.out.println();
@@ -241,13 +217,13 @@ public class AirField {
 			}
 		}
 	}
+
 	public void flyOneJets(int choice) {
-			if (jets[choice] != null) {
-				jets[choice].fly();
-				System.out.println();
-				
-			}
+		if (jets[choice] != null) {
+			jets[choice].fly();
+			System.out.println();
+
 		}
-	
+	}
 
 }
