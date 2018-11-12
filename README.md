@@ -46,6 +46,9 @@ Given more time I would have liked to add more features such as:
 * StringBuilder
 * Switch Statements
 * casting objects
+* methods
+* ternary's
+
 
 #### Challenges
 
